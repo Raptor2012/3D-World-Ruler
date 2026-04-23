@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
@@ -52,12 +52,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebBuild.loader.js";
+      var buildVersion = "20260423205137";
+      var withBuildVersion = (path) => path + "?v=" + buildVersion;
+      var loaderUrl = withBuildVersion(buildUrl + "/WebBuild.loader.js");
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebBuild.data.unityweb",
-        frameworkUrl: buildUrl + "/WebBuild.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebBuild.wasm.unityweb",
+        dataUrl: withBuildVersion(buildUrl + "/WebBuild.data.unityweb"),
+        frameworkUrl: withBuildVersion(buildUrl + "/WebBuild.framework.js.unityweb"),
+        codeUrl: withBuildVersion(buildUrl + "/WebBuild.wasm.unityweb"),
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Christian Prison",
         productName: "3D Ruler in Scene",
@@ -131,3 +133,4 @@
     </script>
   </body>
 </html>
+
